@@ -9,21 +9,25 @@
 /* Begin PBXBuildFile section */
 		6366005627B701170085DA07 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6366005527B701170085DA07 /* AppDelegate.swift */; };
 		6366005827B701170085DA07 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6366005727B701170085DA07 /* SceneDelegate.swift */; };
-		6366005A27B701170085DA07 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6366005927B701170085DA07 /* ViewController.swift */; };
+		6366005A27B701170085DA07 /* FirstVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6366005927B701170085DA07 /* FirstVC.swift */; };
 		6366005D27B701170085DA07 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6366005B27B701170085DA07 /* Main.storyboard */; };
 		6366005F27B701170085DA07 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6366005E27B701170085DA07 /* Assets.xcassets */; };
 		6366006227B701170085DA07 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6366006027B701170085DA07 /* LaunchScreen.storyboard */; };
+		6366006A27B702F60085DA07 /* SecondVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6366006927B702F60085DA07 /* SecondVC.swift */; };
+		6366006C27B703090085DA07 /* ThirdVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6366006B27B703090085DA07 /* ThirdVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		6366005227B701170085DA07 /* 2-SegueExamples.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "2-SegueExamples.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6366005527B701170085DA07 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6366005727B701170085DA07 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		6366005927B701170085DA07 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		6366005927B701170085DA07 /* FirstVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstVC.swift; sourceTree = "<group>"; };
 		6366005C27B701170085DA07 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		6366005E27B701170085DA07 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6366006127B701170085DA07 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		6366006327B701170085DA07 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6366006927B702F60085DA07 /* SecondVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondVC.swift; sourceTree = "<group>"; };
+		6366006B27B703090085DA07 /* ThirdVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThirdVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,7 +62,9 @@
 			children = (
 				6366005527B701170085DA07 /* AppDelegate.swift */,
 				6366005727B701170085DA07 /* SceneDelegate.swift */,
-				6366005927B701170085DA07 /* ViewController.swift */,
+				6366005927B701170085DA07 /* FirstVC.swift */,
+				6366006927B702F60085DA07 /* SecondVC.swift */,
+				6366006B27B703090085DA07 /* ThirdVC.swift */,
 				6366005B27B701170085DA07 /* Main.storyboard */,
 				6366005E27B701170085DA07 /* Assets.xcassets */,
 				6366006027B701170085DA07 /* LaunchScreen.storyboard */,
@@ -138,9 +144,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6366005A27B701170085DA07 /* ViewController.swift in Sources */,
+				6366005A27B701170085DA07 /* FirstVC.swift in Sources */,
 				6366005627B701170085DA07 /* AppDelegate.swift in Sources */,
+				6366006A27B702F60085DA07 /* SecondVC.swift in Sources */,
 				6366005827B701170085DA07 /* SceneDelegate.swift in Sources */,
+				6366006C27B703090085DA07 /* ThirdVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -1,13 +1,14 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class SecondVC: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+
        
     }
 
-
+    @IBAction func clickPassto3(_ sender: Any) {
+    }
 }
-
