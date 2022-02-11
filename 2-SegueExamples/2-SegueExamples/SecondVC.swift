@@ -10,5 +10,9 @@ class SecondVC: UIViewController {
     }
 
     @IBAction func clickPassto3(_ sender: Any) {
+        
+        let destinationVC = storyBoard.instantiateViewController(withIdentifier: "thirdpageId") as! ThirdVC
+        
+        navigationController?.pushViewController(destinationVC, animated: true)
     }
 }
