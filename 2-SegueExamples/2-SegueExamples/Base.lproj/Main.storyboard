@@ -13,7 +13,7 @@
             <objects>
                 <viewController storyboardIdentifier="firstpageId" title="FirstPage" id="BYZ-38-t0r" customClass="FirstVC" customModule="__SegueExamples" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="First Page" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uM7-5O-ufp">
@@ -32,6 +32,7 @@
                                 </buttonConfiguration>
                                 <connections>
                                     <action selector="clickPassto2:" destination="BYZ-38-t0r" eventType="touchUpInside" id="eyh-Jp-h0T"/>
+                                    <segue destination="I9Y-ul-yJP" kind="show" identifier="gofrom1to2" id="ndd-nP-gOy"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -49,7 +50,7 @@
             <objects>
                 <viewController storyboardIdentifier="secondpageId" title="SecondPage" id="I9Y-ul-yJP" customClass="SecondVC" customModule="__SegueExamples" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="hNu-oJ-hqT">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Second Page" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s8U-Q6-0It">
@@ -68,12 +69,14 @@
                                 </buttonConfiguration>
                                 <connections>
                                     <action selector="clickPassto3:" destination="I9Y-ul-yJP" eventType="touchUpInside" id="rjN-tF-oPJ"/>
+                                    <segue destination="uBP-Fh-8P4" kind="show" identifier="gofrom2to3" id="ph2-1d-veL"/>
                                 </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="G4t-Fi-q9I"/>
                         <color key="backgroundColor" systemColor="systemOrangeColor"/>
                     </view>
+                    <navigationItem key="navigationItem" id="YW4-VC-Fd6"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2qW-cV-NgY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -84,7 +87,7 @@
             <objects>
                 <viewController storyboardIdentifier="thirdpageId" title="ThirdPage" id="uBP-Fh-8P4" customClass="ThirdVC" customModule="__SegueExamples" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="lF4-nr-tUW">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Third Page" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Rd-Jc-Nfu">
@@ -103,6 +106,7 @@
                                 </buttonConfiguration>
                                 <connections>
                                     <action selector="clickPassto1:" destination="uBP-Fh-8P4" eventType="touchUpInside" id="gxY-7z-Pdk"/>
+                                    <segue destination="BYZ-38-t0r" kind="show" identifier="gofrom3to1" id="BWq-2t-NJ4"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Anq-Ap-4Na">
@@ -114,12 +118,14 @@
                                 </buttonConfiguration>
                                 <connections>
                                     <action selector="clickPassto2:" destination="uBP-Fh-8P4" eventType="touchUpInside" id="uc7-gt-UzN"/>
+                                    <segue destination="I9Y-ul-yJP" kind="presentation" identifier="gofrom3to2" id="dhB-lH-buI"/>
                                 </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="BgZ-dp-qKt"/>
                         <color key="backgroundColor" systemColor="systemPurpleColor"/>
                     </view>
+                    <navigationItem key="navigationItem" id="ore-pz-Pam"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Mid-Ua-9Wr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -144,6 +150,10 @@
             <point key="canvasLocation" x="-110.14492753623189" y="95.758928571428569"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="dhB-lH-buI"/>
+        <segue reference="BWq-2t-NJ4"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <systemColor name="systemGroupedBackgroundColor">
             <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

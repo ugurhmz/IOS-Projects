@@ -10,9 +10,17 @@ class SecondVC: UIViewController {
     }
 
     @IBAction func clickPassto3(_ sender: Any) {
+//        
+//        let destinationVC = storyBoard.instantiateViewController(withIdentifier: "thirdpageId") as! ThirdVC
+//        
+//        navigationController?.pushViewController(destinationVC, animated: true)
+    }
+    
+    
+    override func prepare(for segue : UIStoryboardSegue, sender: Any?) {
         
-        let destinationVC = storyBoard.instantiateViewController(withIdentifier: "thirdpageId") as! ThirdVC
-        
-        navigationController?.pushViewController(destinationVC, animated: true)
+        if segue.identifier == "gofrom2to3" {
+            print("2 ->  3")
+        }
     }
 }

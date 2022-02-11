@@ -16,15 +16,25 @@ class FirstVC: UIViewController {
 
     
     @IBAction func clickPassto2(_ sender: Any) {
+      
         
+//
+//        // 2- gidilecekyer storyboardId +  gidilecekyer VC
+//        let gidilecekYerVC = storyBoard.instantiateViewController(withIdentifier: "secondpageId") as! SecondVC
+//
+//
+//
+//        //3- pushViewController ile git
+//        navigationController?.pushViewController(gidilecekYerVC, animated: true)
+//
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender : Any?) {
+        // 1- segue id
         
-        // 2- gidilecekyer storyboardId +  gidilecekyer VC
-        let gidilecekYerVC = storyBoard.instantiateViewController(withIdentifier: "secondpageId") as! SecondVC
-        
-        
-        
-        //3- pushViewController ile git
-        navigationController?.pushViewController(gidilecekYerVC, animated: true)
+        if segue.identifier == "gofrom1to2" {
+            print("1'den  -> 2 'ye")
+        }
         
     }
   
