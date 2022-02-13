@@ -1,24 +1,180 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="B0c-gq-Y0l">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Work-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="WorkViewController" customModule="__ToolBar_BadgeUsage" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Work" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iow-r1-CXH">
+                                <rect key="frame" x="118" y="245" width="178" height="88"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="48"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="iow-r1-CXH" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="118" id="41y-4j-zKw"/>
+                            <constraint firstItem="iow-r1-CXH" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="7XH-oE-0pZ"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="iow-r1-CXH" secondAttribute="bottom" constant="480" id="GL1-7E-peL"/>
+                            <constraint firstItem="iow-r1-CXH" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="157" id="vHh-xM-3oa"/>
+                        </constraints>
                     </view>
+                    <tabBarItem key="tabBarItem" tag="1" title="Work" image="workiconsecili" badgeValue="İşler" selectedImage="workiconsecili" id="SmN-Zw-xQT">
+                        <color key="badgeColor" red="0.58081901069999997" green="0.088427625600000004" blue="0.31863921880000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <offsetWrapper key="titlePositionAdjustment" horizontal="0.0" vertical="0.0"/>
+                    </tabBarItem>
+                    <navigationItem key="navigationItem" id="Gvg-OL-dab"/>
+                    <connections>
+                        <outlet property="workLabel" destination="iow-r1-CXH" id="yUg-TM-Weo"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="1043" y="108"/>
+        </scene>
+        <!--Profile Page-->
+        <scene sceneID="1tx-JZ-NS1">
+            <objects>
+                <viewController id="un7-eJ-eyb" customClass="ViewController" customModule="__ToolBar_BadgeUsage" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="h95-eu-uyF">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Profil" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l51-g3-oKl">
+                                <rect key="frame" x="118" y="298" width="178" height="88"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="48"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zal-f0-k4a">
+                                <rect key="frame" x="118" y="394" width="160" height="77"/>
+                                <color key="backgroundColor" red="0.016804177310000001" green="0.19835099580000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="77" id="pjE-QR-KvF"/>
+                                </constraints>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Profil ++">
+                                    <fontDescription key="titleFontDescription" type="system" pointSize="30"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="profilBtn:" destination="un7-eJ-eyb" eventType="touchUpInside" id="crY-hT-bDz"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tdr-Ud-ole">
+                                <rect key="frame" x="118" y="513" width="164" height="66"/>
+                                <color key="backgroundColor" red="0.0" green="0.56904578210000001" blue="0.57461684940000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="66" id="DOM-Fk-1nP"/>
+                                </constraints>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="İş ++">
+                                    <fontDescription key="titleFontDescription" type="system" pointSize="30"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="workBtn:" destination="un7-eJ-eyb" eventType="touchUpInside" id="j1J-1u-Yfb"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Ag2-c8-vin"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="l51-g3-oKl" firstAttribute="top" secondItem="Ag2-c8-vin" secondAttribute="top" constant="210" id="2Zh-IL-hPV"/>
+                            <constraint firstItem="Tdr-Ud-ole" firstAttribute="top" secondItem="Zal-f0-k4a" secondAttribute="bottom" constant="42" id="9PC-lq-EOk"/>
+                            <constraint firstItem="l51-g3-oKl" firstAttribute="leading" secondItem="Ag2-c8-vin" secondAttribute="leading" constant="118" id="ABd-dO-jVl"/>
+                            <constraint firstItem="Ag2-c8-vin" firstAttribute="trailing" secondItem="Tdr-Ud-ole" secondAttribute="trailing" constant="132" id="NgO-7F-avu"/>
+                            <constraint firstItem="Ag2-c8-vin" firstAttribute="bottom" secondItem="Tdr-Ud-ole" secondAttribute="bottom" constant="234" id="U3r-iU-TmP"/>
+                            <constraint firstItem="Zal-f0-k4a" firstAttribute="leading" secondItem="Tdr-Ud-ole" secondAttribute="leading" id="inp-BE-GLS"/>
+                            <constraint firstItem="l51-g3-oKl" firstAttribute="leading" secondItem="Zal-f0-k4a" secondAttribute="leading" id="jqN-hM-9JR"/>
+                            <constraint firstItem="l51-g3-oKl" firstAttribute="centerX" secondItem="h95-eu-uyF" secondAttribute="centerX" id="nbe-aF-rus"/>
+                            <constraint firstItem="Zal-f0-k4a" firstAttribute="top" secondItem="l51-g3-oKl" secondAttribute="bottom" constant="8" id="sbg-ia-zXE"/>
+                            <constraint firstItem="Ag2-c8-vin" firstAttribute="trailing" secondItem="Zal-f0-k4a" secondAttribute="trailing" constant="136" id="u4y-9X-bA5"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Profile Page" id="SAE-v8-m4a">
+                        <barButtonItem key="leftBarButtonItem" title="profil" id="xvT-WV-SLT">
+                            <color key="tintColor" systemColor="systemOrangeColor"/>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="work" id="lTy-Pp-J6J">
+                            <color key="tintColor" red="0.58081901069999997" green="0.088427625600000004" blue="0.31863921880000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <connections>
+                                <action selector="workButton:" destination="un7-eJ-eyb" id="hom-72-Dmc"/>
+                                <segue destination="BYZ-38-t0r" kind="show" identifier="profilToWork" id="diS-bd-bgn"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kpI-2R-ImY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1042" y="883"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="hNa-mA-sR1">
+            <objects>
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="B0c-gq-Y0l" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="WIj-FN-a9R">
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="tintColor" systemColor="systemOrangeColor"/>
+                        <color key="selectedImageTintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="pI5-Rb-zkL" kind="relationship" relationship="viewControllers" id="qpJ-89-Xh0"/>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="fle-vw-ace"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="YDO-gq-fkg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="82.608695652173921" y="90.401785714285708"/>
+        </scene>
+        <!--Profil-->
+        <scene sceneID="ohM-al-u2U">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="pI5-Rb-zkL" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Profil" image="faceiconsecili" badgeValue="Yeni" selectedImage="faceiconsecili" id="ZEj-F4-eMS">
+                        <color key="badgeColor" red="1" green="0.55874382099999997" blue="0.30755749500000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </tabBarItem>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="bgl-xa-k8U">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="un7-eJ-eyb" kind="relationship" relationship="rootViewController" id="Kun-Zy-enC"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cA0-Sa-5ne" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="83" y="883"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="diS-bd-bgn"/>
+    </inferredMetricsTieBreakers>
+    <resources>
+        <image name="faceiconsecili" width="18" height="18"/>
+        <image name="workiconsecili" width="18" height="18"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemOrangeColor">
+            <color red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
 </document>
