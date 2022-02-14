@@ -5,6 +5,7 @@ import UIKit
 class LoginVC: UIViewController {
 
     
+    @IBOutlet weak var failedMsgLabel: UILabel!
     
     @IBOutlet weak var usernameField: UITextField!
     @IBOutlet weak var passwordField: UITextField!
@@ -14,6 +15,7 @@ class LoginVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        failedMsgLabel.text = ""
         
         
         // ilk kez açıldığında, bu veriler daha önce kayıt edildimi
@@ -23,7 +25,7 @@ class LoginVC: UIViewController {
         
         
         // her ikiside notfound !=  -> Geçiş yap.
-        if username != "notfound" && password != "notfound" {
+        if username == "ugur67x" && password == "123456" {
             performSegue(withIdentifier: "loginToWelcome", sender: nil)
         }
         
@@ -36,13 +38,13 @@ class LoginVC: UIViewController {
         
         if let username = usernameField.text, let password = passwordField.text {
             
-            if username == "admin" && password == "123456" {
+            if username == "ugur" && password == "123456" {
                 db.set(username, forKey: "dbusername")
                 db.set(password, forKey: "dbpassword")
                 
                 performSegue(withIdentifier: "loginToWelcome", sender: nil)
             } else{
-                print("Login failed!")
+                failedMsgLabel.text = "Login Failed!"
             }
             
             
@@ -56,6 +58,10 @@ class LoginVC: UIViewController {
     // When passing welcome page
     override func viewWillAppear(_ animated: Bool) {
         navigationController?.isNavigationBarHidden = true
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        navigationController?.isNavigationBarHidden = false
     }
     
     
