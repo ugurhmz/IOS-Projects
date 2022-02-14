@@ -23,6 +23,23 @@ class ViewController: UIViewController {
         db.set(trCities, forKey: "trCities")
         
         
+        // READ
+        let name = db.string(forKey: "name") ?? "not found"
+        let age = db.integer(forKey: "age")
+        let weight = db.double(forKey: "weight")
+        let isLive = db.bool(forKey: "live")
+        
+        
+        
+        print(name, age, weight, isLive)
+        
+        
+        let readNamesArr = db.array(forKey: "namesArr") as? [String] ?? [String]()
+        print(readNamesArr[0])
+        
+        
+        let readDict = db.dictionary(forKey: "trCities") as? [String:String] ?? [String:String]()
+        print(readDict["67"]!)
         
         
     }
