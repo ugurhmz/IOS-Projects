@@ -24,8 +24,8 @@ class LoginVC: UIViewController {
         
         
         
-        // her ikiside notfound !=  -> Geçiş yap.
-        if username == "ugur67x" && password == "123456" {
+        // daha önce kayıt varsa ->  diğer sayfaya Geçiş yap.
+        if username != "notfound" && password != "notfound" {
             performSegue(withIdentifier: "loginToWelcome", sender: nil)
         }
         
@@ -36,13 +36,13 @@ class LoginVC: UIViewController {
     // Login btn
     @IBAction func loginBtn(_ sender: Any) {
         
-        if let username = usernameField.text, let password = passwordField.text {
+        if let username = usernameField.text, let password = passwordField.text {   // Önce texten verileri al.
             
             if username == "ugur" && password == "123456" {
                 db.set(username, forKey: "dbusername")
                 db.set(password, forKey: "dbpassword")
                 
-                performSegue(withIdentifier: "loginToWelcome", sender: nil)
+                performSegue(withIdentifier: "loginToWelcome", sender: nil) // Yukardaki şart sağlanıyor ise geçiş yap.
             } else{
                 failedMsgLabel.text = "Login Failed!"
             }
@@ -55,11 +55,14 @@ class LoginVC: UIViewController {
     }
     
     
-    // When passing welcome page
+    
     override func viewWillAppear(_ animated: Bool) {
         navigationController?.isNavigationBarHidden = true
     }
     
+    
+    
+    // When passing welcome page
     override func viewWillDisappear(_ animated: Bool) {
         navigationController?.isNavigationBarHidden = false
     }

@@ -109,8 +109,15 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Welcome Page" id="f8G-yf-IYK">
-                        <barButtonItem key="rightBarButtonItem" title="Logout" id="cCC-jb-WEI"/>
+                        <barButtonItem key="rightBarButtonItem" title="Logout" id="cCC-jb-WEI">
+                            <connections>
+                                <action selector="logoutBtn:" destination="EEF-5S-VHQ" id="jL4-ug-Bdh"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="welcomeMsgLabel" destination="qHp-xz-eb8" id="qX7-wb-CF3"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9f4-SK-p0i" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
