@@ -42,6 +42,17 @@ class ViewController: UIViewController {
         print(readDict["67"]!)
         
         
+        
+        // UPDATE
+        db.set("Ugur edited", forKey: "name")
+        let newUgur = db.string(forKey: "name") ?? "not"
+        print(newUgur)
+      
+        
+        // DELETE
+        db.removeObject(forKey: "live")
+        
+        
     }
 
 
