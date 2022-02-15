@@ -15,8 +15,13 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
     
-        saveData()
+        //saveData()
+        readDatas()         
+        updateData()
         readDatas()
+        //deleteData()
+       
+    
     }
 
     
@@ -24,8 +29,9 @@ class ViewController: UIViewController {
     func saveData(){
         let person = Person(context: context)
         
-        person.person_age = 27
-        person.person_name = "Ugur"
+        person.person_age = 28
+        person.person_name = "Eylül"
+        
         appDelegate.saveContext()
         
     }
@@ -45,6 +51,25 @@ class ViewController: UIViewController {
             print("Name : \(item.person_name!) -> Age : \(item.person_age)")
         }
     
+    }
+    
+    
+    // Update
+    func updateData(){
+        let person = personList[0]
+        person.person_age = 28
+        person.person_name = "Edit Ugur"
+        appDelegate.saveContext()
+        
+    }
+    
+    
+    
+    // Delete
+    func deleteData(){
+        let person = personList[1]
+        self.context.delete(person)
+        appDelegate.saveContext()
     }
     
 
