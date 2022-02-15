@@ -18,7 +18,8 @@ class ViewController: UIViewController {
         //saveData()
         //readDatas()
         //updateData()
-        readDatas()
+        //readDatas()
+        filterFunc()
         //deleteData()
        
     
@@ -87,6 +88,32 @@ class ViewController: UIViewController {
             
         } catch {
             print("err!")
+        }
+        
+    }
+    
+    
+    
+    
+    // Predicate -> Filter     , %@ -> String ifadeler,  %i -> Int
+    func filterFunc(){
+        
+        let  fetchRequest: NSFetchRequest<Person> = Person.fetchRequest()
+        //fetchRequest.predicate = NSPredicate(format : "person_name == %@", "Eylül") // Birebir olması lazım yoksa getirmez.
+        
+        fetchRequest.predicate = NSPredicate(format: "person_name CONTAINS %@ and person_age CONTAINS %i", "u",8)
+        
+        
+        
+        do {
+            personList = try context.fetch(fetchRequest)
+            
+        } catch {
+            print("Err")
+        }
+        
+        for item in personList {
+            print("\(item.person_age) | \(item.person_name!)")
         }
         
     }
