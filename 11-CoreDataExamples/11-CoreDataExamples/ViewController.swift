@@ -16,8 +16,8 @@ class ViewController: UIViewController {
         super.viewDidLoad()
     
         //saveData()
-        readDatas()         
-        updateData()
+        //readDatas()
+        //updateData()
         readDatas()
         //deleteData()
        
@@ -25,7 +25,7 @@ class ViewController: UIViewController {
     }
 
     
-    // Save
+    // Create
     func saveData(){
         let person = Person(context: context)
         
@@ -70,6 +70,25 @@ class ViewController: UIViewController {
         let person = personList[1]
         self.context.delete(person)
         appDelegate.saveContext()
+    }
+    
+    
+    
+    // Read & Sorting
+    func readyAndSort() {
+        let fetchRequest:NSFetchRequest<Person> = Person.fetchRequest()
+        let sort = NSSortDescriptor(key: #keyPath(Person.person_age), ascending : true)
+        
+        fetchRequest.sortDescriptors = [sort]
+        
+        do {
+            
+            personList = try context.fetch(fetchRequest)
+            
+        } catch {
+            print("err!")
+        }
+        
     }
     
 
