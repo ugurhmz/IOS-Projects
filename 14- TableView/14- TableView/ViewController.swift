@@ -37,7 +37,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "mycell", for: indexPath)  // önce Hangi cell'e yazılacak
         
-        cell.textLabel?.text = myDatas[indexPath.row]
+        cell.textLabel?.text = "\(indexPath.row + 1 ) - \(myDatas[indexPath.row])"
         cell.backgroundColor = UIColor.brown
         cell.textLabel?.font = UIFont(name: "Helvetica", size: 26)
         cell.layer.borderWidth = 0.2
@@ -59,5 +59,23 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 125
     }
+    
+    
+    
+    // cell swipe'tan sonraki Actions'lar
+    func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+       
+        let deleteAction = UIContextualAction(style: .destructive, title: "Delete", handler: {
+            (contextualAction, view, boolValue) in
+            
+            self.myDatas.remove(at: indexPath.row)      // sil rowu
+            self.tableView.reloadData()                // silindikten sonra -> refresh
+        })
+        
+        
+        return UISwipeActionsConfiguration(actions: [deleteAction])
+    }
+    
+    
 }
 
