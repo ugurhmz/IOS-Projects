@@ -2,7 +2,7 @@
 
 import UIKit
 
-class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class ViewController: UIViewController{
    
     
     @IBOutlet weak var tableView: UITableView!
@@ -20,6 +20,29 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         myDatas = ["New York", "Boston","Ireland","İzmir","Zonguldak","France","Amsterdam"]
     }
 
+    
+   
+    
+    // detail
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        if segue.identifier == "rowToDetailsVC" {
+            let destinationVC = segue.destination as! DetailsVC
+            
+            destinationVC.selectedRow = self.selectedThisRow
+            
+        }
+        
+    }
+    
+    
+}
+
+
+
+
+extension ViewController: UITableViewDelegate, UITableViewDataSource {
+    
     
     // numberOfSections,  datas Bittikten sonra kaç kez tekrarlansın
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -64,10 +87,6 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     }
     
     
-    
-    
-    
-    
     // cell swipe'tan sonraki Actions'lar
     func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
        
@@ -96,20 +115,6 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         
         
         return UISwipeActionsConfiguration(actions: [deleteAction,editAction])
-    }
-    
-    
-    
-    // detail
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        
-        if segue.identifier == "rowToDetailsVC" {
-            let destinationVC = segue.destination as! DetailsVC
-            
-            destinationVC.selectedRow = self.selectedThisRow
-            
-        }
-        
     }
     
     
