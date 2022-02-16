@@ -8,6 +8,8 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     @IBOutlet weak var tableView: UITableView!
     
     var myDatas = [String]()
+    var selectedThisRow : String?
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,10 +40,10 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         let cell = tableView.dequeueReusableCell(withIdentifier: "mycell", for: indexPath)  // önce Hangi cell'e yazılacak
         
         cell.textLabel?.text = "\(indexPath.row + 1 ) - \(myDatas[indexPath.row])"
-        cell.backgroundColor = UIColor.brown
-        cell.textLabel?.font = UIFont(name: "Helvetica", size: 26)
+        cell.backgroundColor = UIColor.black
+        cell.textLabel?.font = UIFont(name: "Helvetica", size: 28)
         cell.layer.borderWidth = 0.2
-        cell.textLabel?.textColor = UIColor.black // <- Changed color here
+        cell.textLabel?.textColor = UIColor.yellow // <- Changed color here
         cell.textLabel?.textAlignment = .center
        
         
@@ -62,9 +64,14 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     
     
+    
+    
+    
     // cell swipe'tan sonraki Actions'lar
     func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
        
+        
+        // delete
         let deleteAction = UIContextualAction(style: .destructive, title: "Delete", handler: {
             (contextualAction, view, boolValue) in
             
@@ -73,7 +80,35 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         })
         
         
-        return UISwipeActionsConfiguration(actions: [deleteAction])
+        
+        
+        // edit
+        let editAction = UIContextualAction(style: .normal, title: "Edit", handler: {
+            (contextualAction, view, boolValue) in
+            
+            self.selectedThisRow = self.myDatas[indexPath.row]
+            self.performSegue(withIdentifier: "rowToDetailsVC", sender: nil)
+            
+            
+        })
+        
+        
+        
+        return UISwipeActionsConfiguration(actions: [deleteAction,editAction])
+    }
+    
+    
+    
+    // detail
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        if segue.identifier == "rowToDetailsVC" {
+            let destinationVC = segue.destination as! DetailsVC
+            
+            destinationVC.selectedRow = self.selectedThisRow
+            
+        }
+        
     }
     
     
