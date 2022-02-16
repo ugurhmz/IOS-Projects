@@ -40,10 +40,10 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         let cell = tableView.dequeueReusableCell(withIdentifier: "mycell", for: indexPath)  // önce Hangi cell'e yazılacak
         
         cell.textLabel?.text = "\(indexPath.row + 1 ) - \(myDatas[indexPath.row])"
-        cell.backgroundColor = UIColor.black
-        cell.textLabel?.font = UIFont(name: "Helvetica", size: 28)
+        cell.backgroundColor = UIColor.white
+        cell.textLabel?.font = UIFont(name: "Helvetica", size: 30)
         cell.layer.borderWidth = 0.2
-        cell.textLabel?.textColor = UIColor.yellow // <- Changed color here
+        cell.textLabel?.textColor = UIColor.black // <- Changed color here
         cell.textLabel?.textAlignment = .center
        
         
@@ -53,7 +53,8 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     // didSelectRowAt
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print(myDatas[indexPath.row])
+        self.selectedThisRow = myDatas[indexPath.row]
+        performSegue(withIdentifier: "rowToDetailsVC", sender: nil)
     }
 
     
