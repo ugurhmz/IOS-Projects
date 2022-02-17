@@ -1,17 +1,24 @@
 
 import UIKit
 
+
+protocol TableViewProtocol {
+    func cellClickBtn(indexPath: IndexPath)
+}
+
+
+
+
 class CustomCellVC: UITableViewCell {
 
-    
-    
-    
     @IBOutlet weak var label: UILabel!
+    var clickProtocol : TableViewProtocol?
+    var indexPath:IndexPath?
     
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -19,5 +26,11 @@ class CustomCellVC: UITableViewCell {
 
      
     }
-
+    
+    
+    // CLICK BTN
+    @IBAction func clickedBtn(_ sender: Any) {
+        clickProtocol?.cellClickBtn(indexPath: indexPath!)
+    }
+    
 }

@@ -33,10 +33,23 @@
                                                     <color key="textColor" red="0.1379520531" green="0.30124549090000002" blue="0.57244684280000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gac-sM-zGf">
+                                                    <rect key="frame" x="323" y="29" width="66" height="37"/>
+                                                    <state key="normal" title="Button"/>
+                                                    <buttonConfiguration key="configuration" style="plain" title="Click">
+                                                        <fontDescription key="titleFontDescription" type="system" pointSize="19"/>
+                                                    </buttonConfiguration>
+                                                    <connections>
+                                                        <action selector="clickedBtn:" destination="b2e-qy-ZAo" eventType="touchUpInside" id="J2f-fu-0jZ"/>
+                                                    </connections>
+                                                </button>
                                             </subviews>
                                             <constraints>
+                                                <constraint firstAttribute="bottomMargin" secondItem="gac-sM-zGf" secondAttribute="bottom" constant="13" id="Wlm-BZ-jxj"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="gac-sM-zGf" secondAttribute="trailing" constant="5" id="Y8c-jh-GX4"/>
                                                 <constraint firstItem="oPz-DD-2jC" firstAttribute="centerX" secondItem="Pny-Eq-rbw" secondAttribute="centerX" id="YSy-6A-NtY"/>
                                                 <constraint firstItem="oPz-DD-2jC" firstAttribute="centerY" secondItem="Pny-Eq-rbw" secondAttribute="centerY" id="Zcd-Xp-r0J"/>
+                                                <constraint firstItem="gac-sM-zGf" firstAttribute="top" secondItem="Pny-Eq-rbw" secondAttribute="topMargin" constant="18" id="Zpg-c0-DzL"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>

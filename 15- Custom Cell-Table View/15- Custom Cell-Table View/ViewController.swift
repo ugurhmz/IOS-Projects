@@ -31,17 +31,20 @@ class ViewController: UIViewController {
 
 
 
-extension ViewController: UITableViewDelegate, UITableViewDataSource {
+extension ViewController: UITableViewDelegate, UITableViewDataSource, TableViewProtocol {
     
     
+    func cellClickBtn(indexPath: IndexPath) {
+        print("clicked btn, \(personObj[indexPath.row].email!)")
+    }
     
     
-    
-  
     
     func numberOfSections(in tableView: UITableView) -> Int {
         1
     }
+    
+    
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return  personObj.count
@@ -53,8 +56,10 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
         let person = personObj[indexPath.row]
         let cell = tableView.dequeueReusableCell(withIdentifier: "personsCell", for: indexPath) as! CustomCellVC
         
-        cell.label.text = "\(person.name! ) - \(person.email!)"      // Custom Cell'in içinde bağlı olan, labelin text'ine ata.
+        cell.label.text = "\(person.name!)"      // Custom Cell'in içinde bağlı olan, labelin text'ine ata.
         
+        cell.clickProtocol = self
+        cell.indexPath = indexPath
         
         return cell
         
