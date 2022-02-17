@@ -37,8 +37,8 @@
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="characterWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="boh-AI-fyc">
                                                     <rect key="frame" x="30" y="49" width="96" height="52"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="height" constant="52" id="nnI-Lu-Yro"/>
-                                                        <constraint firstAttribute="width" constant="96" id="ryM-gW-xbs"/>
+                                                        <constraint firstAttribute="height" constant="52" id="58H-Gk-yqO"/>
+                                                        <constraint firstAttribute="width" constant="96" id="vpy-wb-Avd"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="23"/>
                                                     <nil key="textColor"/>
@@ -46,10 +46,10 @@
                                                 </label>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="boh-AI-fyc" firstAttribute="top" secondItem="j8p-RL-KQP" secondAttribute="top" constant="49" id="7OK-gm-spC"/>
-                                                <constraint firstAttribute="bottom" secondItem="boh-AI-fyc" secondAttribute="bottom" constant="50" id="9GE-fJ-tTc"/>
-                                                <constraint firstItem="boh-AI-fyc" firstAttribute="leading" secondItem="j8p-RL-KQP" secondAttribute="leading" constant="30" id="aoP-ja-CVx"/>
-                                                <constraint firstAttribute="trailing" secondItem="boh-AI-fyc" secondAttribute="trailing" constant="30" id="kyL-21-sYS"/>
+                                                <constraint firstAttribute="trailing" secondItem="boh-AI-fyc" secondAttribute="trailing" constant="30" id="2ly-Ah-0F1"/>
+                                                <constraint firstItem="boh-AI-fyc" firstAttribute="top" secondItem="j8p-RL-KQP" secondAttribute="top" constant="49" id="Mrk-Ga-BzZ"/>
+                                                <constraint firstAttribute="bottom" secondItem="boh-AI-fyc" secondAttribute="bottom" constant="50" id="g3w-RQ-Pta"/>
+                                                <constraint firstItem="boh-AI-fyc" firstAttribute="leading" secondItem="j8p-RL-KQP" secondAttribute="leading" constant="30" id="o9O-XF-80k"/>
                                             </constraints>
                                         </collectionViewCellContentView>
                                         <color key="backgroundColor" systemColor="systemOrangeColor"/>
