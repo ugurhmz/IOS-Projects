@@ -13,6 +13,7 @@
 		6367A4A427BE871F0033610F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6367A4A227BE871F0033610F /* Main.storyboard */; };
 		6367A4A627BE871F0033610F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6367A4A527BE871F0033610F /* Assets.xcassets */; };
 		6367A4A927BE871F0033610F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6367A4A727BE871F0033610F /* LaunchScreen.storyboard */; };
+		6367A4B127BE952C0033610F /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6367A4B027BE952C0033610F /* CollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		6367A4A527BE871F0033610F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6367A4A827BE871F0033610F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		6367A4AA27BE871F0033610F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6367A4B027BE952C0033610F /* CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +61,7 @@
 				6367A49C27BE871F0033610F /* AppDelegate.swift */,
 				6367A49E27BE871F0033610F /* SceneDelegate.swift */,
 				6367A4A027BE871F0033610F /* ViewController.swift */,
+				6367A4B027BE952C0033610F /* CollectionViewCell.swift */,
 				6367A4A227BE871F0033610F /* Main.storyboard */,
 				6367A4A527BE871F0033610F /* Assets.xcassets */,
 				6367A4A727BE871F0033610F /* LaunchScreen.storyboard */,
@@ -140,6 +143,7 @@
 			files = (
 				6367A4A127BE871F0033610F /* ViewController.swift in Sources */,
 				6367A49D27BE871F0033610F /* AppDelegate.swift in Sources */,
+				6367A4B127BE952C0033610F /* CollectionViewCell.swift in Sources */,
 				6367A49F27BE871F0033610F /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
