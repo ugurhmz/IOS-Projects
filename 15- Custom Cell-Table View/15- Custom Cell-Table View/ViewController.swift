@@ -24,7 +24,7 @@ class ViewController: UIViewController {
         personObj.append(p3)
         personObj.append(p4)
         
-        print(personObj.count)
+        
         
     }
 }
@@ -37,13 +37,27 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
     
     
     
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+  
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        1
     }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return  personObj.count
+    }
+    
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        return UITableViewCell()
+        let person = personObj[indexPath.row]
+        let cell = tableView.dequeueReusableCell(withIdentifier: "personsCell", for: indexPath) as! CustomCellVC
+        
+        cell.label.text = "\(person.name! ) - \(person.email!)"      // Custom Cell'in içinde bağlı olan, labelin text'ine ata.
+        
+        
+        return cell
+        
     }
     
     
