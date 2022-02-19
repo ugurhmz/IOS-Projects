@@ -15,10 +15,43 @@ class ViewController: UIViewController {
         
         
         //addUser()
+        //allDatas()
         
-        allDatas()
+        fetchUserDatas()
+    }
+    
+    // CODABLE
+    func fetchUserDatas(){
+                 let url = "http://kasimadalan.pe.hu/kisiler/tum_kisiler.php"
+        
+                URLSession.shared.dataTask(with: URL(string: url)!, completionHandler: {
+                    data, response, error in
+        
+                    guard let data = data, error == nil else {
+                        return
+                    }
+        
+    
+        
+                    do {
+                         let json = try JSONDecoder().decode(Welcome.self, from:data)
+                        
+                        for item in json.kisiler! {
+                            print(item.kisiID!, item.kisiAd!)
+                            
+                        }
+                        
+                           
+                    } catch(let error) {
+                        print("err", error)
+                    }
+        
+        
+                }).resume()
         
     }
+    
+    
     
     
     func addUser(){
