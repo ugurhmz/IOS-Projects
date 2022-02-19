@@ -16,9 +16,12 @@ class ViewController: UIViewController {
         
         // child -> Tablo name
         //ref?.child("Test").setValue("hello")
+        
         //addPerson()
         //deletePerson()
-        updatePerson()
+        //updatePerson()
+        
+        allDatas()
     }
 
     
@@ -46,6 +49,34 @@ class ViewController: UIViewController {
         //tableRef?.setValue(p2Dict)
         tableRef?.setValue(p3Dict)
         
+    }
+    
+    
+    
+    
+    // READ
+    func allDatas(){
+        ref?.child("Person_T").observe(.value, with: { snapshot in
+            
+            if let fetchAllDatas = snapshot.value as? [String:AnyObject] {
+                
+                for item in fetchAllDatas {
+                    if let dict = item.value as? NSDictionary {
+                        
+                        let key = item.key
+                        let personName  = dict["name"] as? String ?? ""
+                        let personEmail = dict["email"] as? String ?? ""
+                        let personAge   = dict["age"] as?  Int ?? 0
+                        
+                        
+                        print(key, personName, personEmail, personAge)
+                    }
+                    
+                }
+                
+            }
+            
+        })
     }
     
     
