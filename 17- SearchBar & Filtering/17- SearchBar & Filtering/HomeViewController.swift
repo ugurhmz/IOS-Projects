@@ -26,17 +26,27 @@ class HomeViewController: UIViewController {
 
 
 
-
+// TableView
 extension HomeViewController : UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return dummyDatas.count
+        if self.isSearching {   // isSearching
+            return self.afterSearchDatas.count
+            
+        } else { return dummyDatas.count }  // !isSearching
+        
+       
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "mycell", for: indexPath)
         
-        cell.textLabel?.text = dummyDatas[indexPath.row]
+        
+        if self.isSearching { // isSearching
+             cell.textLabel?.text = afterSearchDatas[indexPath.row]
+        } else {                // !isSearching
+            cell.textLabel?.text = dummyDatas[indexPath.row]
+        }
         
         return cell
     }
@@ -46,6 +56,20 @@ extension HomeViewController : UITableViewDelegate, UITableViewDataSource {
 
 
 
+// SearchBar
 extension HomeViewController : UISearchBarDelegate {
+    
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        
+        if searchText.isEmpty {
+            self.isSearching = false
+        } else {
+            self.isSearching = true
+            
+            afterSearchDatas = dummyDatas.filter({ $0.lowercased().contains(searchText.lowercased())  })
+        }
+        
+        tableView.reloadData()
+    }
     
 }
