@@ -14,7 +14,9 @@ class ViewController: UIViewController {
         print(dateFormatter.string(from: date))
         
         
-        addUser()
+        //addUser()
+        
+        allDatas()
         
     }
     
@@ -36,7 +38,7 @@ class ViewController: UIViewController {
                     }
                     
                     do {
-                        
+                        print("wqeqw")
                         if let json = try JSONSerialization.jsonObject(with: data, options: []) as? [String:Any] {
                             print(json)
                         }
@@ -46,7 +48,35 @@ class ViewController: UIViewController {
         }.resume()
         
     }
-
-
+    
+    
+    func allDatas(){
+        
+        
+        guard let url = URL(string: "http://localhost:3000/users") else {
+            return
+            
+        }
+        
+        URLSession.shared.dataTask(with: url) { (data, response, err) in
+            
+            guard let data = data else {
+                return
+            }
+            
+            
+            do {
+                
+                let json = try JSONSerialization.jsonObject(with:data, options: .mutableContainers)
+                    print(json)
+                
+            }catch {
+                print("err")
+            }
+            
+        }.resume()
+        
+        
+    }
 }
 
